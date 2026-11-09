@@ -1,0 +1,122 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>HandoverIQ – Tech Nova</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#eef2f7;--fg:#14213d;--mut:#5b6573;--card:#fff;--line:#dde3ec;--ac:#0f9b8e;--acbg:#e3f6f3;--bad:#c62828;--amb:#946200;--sh:0 1px 3px rgba(20,33,61,.08),0 4px 14px rgba(20,33,61,.06);color-scheme:light}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1319;--fg:#e8edf3;--mut:#9aa6b4;--card:#18202a;--line:#2a3441;--ac:#3cc9ba;--acbg:#14302d;--bad:#ff8a80;--amb:#ffcc66;--sh:0 1px 3px rgba(0,0,0,.4);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e1319;--fg:#e8edf3;--mut:#9aa6b4;--card:#18202a;--line:#2a3441;--ac:#3cc9ba;--acbg:#14302d;--bad:#ff8a80;--amb:#ffcc66;--sh:0 1px 3px rgba(0,0,0,.4);color-scheme:dark}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.55 -apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+.hero{background:linear-gradient(135deg,#14213d 0%,#0f6b73 60%,#1aa89a 100%);color:#fff;padding:22px 16px 56px}.hero>div{max-width:900px;margin:0 auto}
+.logo{display:flex;align-items:center;gap:10px}.mark{width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,.18);display:grid;place-items:center;font-size:20px}
+h1{margin:0;font-size:26px;letter-spacing:-.3px}h1 span{color:#8ff0e3}.sub{opacity:.85;font-size:14px;margin:8px 0 0;max-width:620px}.pill{display:inline-block;background:rgba(255,255,255,.16);border-radius:99px;padding:2px 10px;font-size:11.5px;margin-top:10px;font-weight:700}
+nav{display:flex;gap:6px;max-width:900px;margin:-30px auto 0;padding:6px;background:var(--card);border-radius:12px;box-shadow:var(--sh);overflow-x:auto;position:relative;width:calc(100% - 24px)}
+nav button{flex:1;border:0;background:none;color:var(--mut);padding:10px 12px;font:inherit;font-weight:700;cursor:pointer;border-radius:8px;white-space:nowrap;transition:.15s}nav button:hover{background:var(--acbg)}nav button.on{background:var(--ac);color:#fff}
+main{max-width:900px;margin:0 auto;padding:18px 12px 40px}h2{font-size:15px;margin:22px 0 8px;text-transform:uppercase;letter-spacing:.6px;color:var(--mut)}
+.card{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--line);border-radius:10px;padding:12px 14px;margin:0 0 10px;box-shadow:var(--sh)}.card p{margin:6px 0}.okc{outline:2px solid var(--ac)}.no{opacity:.45}
+.t-decision{border-left-color:#3b82f6}.t-task{border-left-color:#f59e0b}.t-question{border-left-color:#8b5cf6}.t-ownership{border-left-color:#0f9b8e}.t-risk{border-left-color:#ef4444}.t-dependency{border-left-color:#f97316}.t-contact{border-left-color:#64748b}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:12.5px}.mut{color:var(--mut)}
+.tag{background:var(--acbg);color:var(--ac);font-weight:800;border-radius:6px;padding:2px 8px;text-transform:uppercase;font-size:10.5px;letter-spacing:.5px}
+.bd{border-radius:99px;padding:1px 9px;font-size:11.5px;font-weight:700;border:1px solid currentColor;background:transparent}.Verified{color:var(--ac)}.Conflicting{color:var(--bad)}.Needs{color:var(--amb)}.Missing{color:var(--bad)}
+.cite{font-size:12px;color:var(--mut);margin-top:4px}.cite q{display:block;font-style:italic;border-left:3px solid var(--ac);padding:2px 0 2px 8px;margin-top:4px;background:var(--acbg);border-radius:0 6px 6px 0;color:var(--fg);quotes:none}
+.warn{background:rgba(255,170,0,.14);color:var(--amb);font-size:13px;padding:8px 10px;border-radius:8px;margin:8px 0}
+button.b,select,input,textarea{font:inherit;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:8px 12px}
+button.b{cursor:pointer;font-weight:700;transition:.15s}button.b:hover{border-color:var(--ac);color:var(--ac)}button.p{background:var(--ac);color:#fff;border-color:var(--ac)}button.p:hover{color:#fff;filter:brightness(1.1)}button:disabled{opacity:.45;cursor:not-allowed}
+input:focus,textarea:focus,select:focus{outline:2px solid var(--ac);border-color:transparent}textarea{width:100%;min-height:130px}input,select{max-width:100%}.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-bottom:8px}
+.steps,.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:14px}
+.steps div,.stats div{background:var(--card);border-radius:10px;padding:12px;box-shadow:var(--sh);font-size:12.5px;color:var(--mut);border:1px solid var(--line)}.steps b{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--ac);color:#fff;margin-right:6px}.steps span{display:block;margin-top:4px}
+.stats b{display:block;font-size:26px;color:var(--fg);line-height:1.1}.stats .w b{color:var(--amb)}.stats .g2 b{color:var(--ac)}
+ul{padding-left:20px;margin:4px 0}li{margin:5px 0}.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}.chips button.on{background:var(--ac);color:#fff;border-color:var(--ac)}
+</style></head><body>
+<div class="hero"><div><div class="logo"><div class="mark">🔁</div><h1>Handover<span>IQ</span></h1></div><p class="sub">Capture what a person knows and decided, so the next person can pick it up without chasing anyone.</p><span class="pill">Team Tech Nova · Evidence-linked · Permission-aware</span></div></div>
+<nav id="nav"></nav><main id="app"></main>
+<script>
+const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const LV={Public:0,Team:1,Restricted:2},LBL={decision:"Decisions already taken",task:"Unfinished work",question:"Open questions",ownership:"Who owns what",risk:"Where the risk sits",dependency:"Dependencies",contact:"Key contacts"};
+let S={sources:[],items:[],versions:[],nid:1,tab:"connect",edit:null,flt:"all",view:"Team",vi:0};
+try{const r=localStorage.getItem("hiq1");if(r)S=Object.assign(S,JSON.parse(r))}catch(e){}
+const save=()=>{try{localStorage.setItem("hiq1",JSON.stringify(S))}catch(e){}};
+const DEMO=[{title:"Team chat export",type:"Chat",author:"Priya",date:"2026-10-10",access:"Team",text:"Priya: We decided to use Postgres instead of MongoDB for the booking data.\nRahul: Agreed. I will own the payment integration with Razorpay.\nPriya: Not sure if we need SMS reminders, can someone check the cost?\nRahul: The Razorpay webhook is fragile, it breaks when the signature header is missing.\nMeera: Design handoff is done, but the mobile checkout screen is still pending.\nPriya: I am responsible for the deployment on Render.\nMeera: Is the logo licence confirmed for the print flyers?"},
+{title:"Meeting notes 12 Oct",type:"Meeting notes",author:"Priya",date:"2026-10-12",access:"Team",text:"Decision: launch beta on 30 November for the first 50 users.\nRahul will finish the refund flow before beta.\nDependency: payments depend on Razorpay account approval, waiting on the bank.\nRisk: only Rahul knows how the webhook retry works, nothing is documented.\nTODO: write the database backup script.\nPriya maybe thinks we should switch to MongoDB for analytics later.\nContact Anita Verma at the college accounts office for the Razorpay KYC papers."},
+{title:"Admin notes (restricted)",type:"Docs",author:"Priya",date:"2026-10-14",access:"Restricted",text:"Production DB password is in the shared vault, contact priya@example.com or 9876543210 for access.\nDecision: budget capped at Rs 40,000, not more.\nRisk: Render free plan expires on 15 December, deployment will go down.\nMeera will update the mobile checkout screen by 20 November.\nTODO: rotate API keys before beta."}];
+const KW=/^(Risk|Decision|Dependency|Contact|Note|Todo)$/i;
+const T=[["risk",/\b(risks?|blockers?|fragile|breaks?|expires?|only \w+ knows|undocumented|nothing is documented)\b/i],["dependency",/\b(depends? on|depend on|waiting on|requires?|relies on)\b/i],["contact",/\b(contact|reach out to)\b/i],["ownership",/\b(owns?|responsible for|in charge of|maintains?)\b/i],["decision",/\b(decided|decision|agreed|going with|switch to|capped)\b/i],["question",/\?\s*$|\b(not sure|open question|unclear|tbd)\b/i],["task",/\b(todo|will (finish|update|write|handle|fix|build)|pending|need to|needs to|not done|wip)\b/i]];
+const SN=id=>(S.sources.find(s=>s.id==id)||{}).title||"source";
+function analyse(){
+ const ppl=new Set();S.sources.forEach(s=>{ppl.add(s.author);s.text.split("\n").forEach(l=>{const m=l.match(/^([A-Z][a-z]+):\s/);if(m&&!KW.test(m[1]))ppl.add(m[1])})});
+ S.items=[];
+ S.sources.forEach(s=>s.text.split("\n").forEach((raw,i)=>{let line=raw.trim();if(!line)return;const m=line.match(/^([A-Z][a-z]+):\s+(.*)$/);let sp="";if(m&&!KW.test(m[1])){sp=m[1];line=m[2]}
+  const t=T.find(([k,r])=>r.test(line));if(!t)return;const type=t[0];
+  let own=[...ppl].find(p=>new RegExp("\\b"+p+"\\b").test(line))||"";if(!own&&sp&&(type=="task"||type=="ownership"))own=sp;
+  const soft=/\b(maybe|thinks?|probably|might|not sure)\b|\?\s*$/i.test(line);
+  S.items.push({id:S.nid++,type,text:line.replace(/^(Decision|Risk|Dependency|Contact|TODO):\s*/i,""),raw:raw.trim(),src:s.id,ln:i+1,by:sp||s.author,own,access:s.access,ok:null,st:soft||type=="question"?"Needs confirmation":(type=="task"&&!own?"Missing evidence":"Verified")});}));
+ conflicts();S.tab="review";save();draw()}
+function conflicts(){const sig=t=>t.toLowerCase().match(/[a-z]{6,}/g)||[],D=S.items.filter(i=>i.type=="decision");
+ D.forEach((a,x)=>D.slice(x+1).forEach(b=>{if(sig(a.text).some(w=>sig(b.text).includes(w))&&/instead|switch|rather than|no longer|revert/i.test(a.text+" "+b.text)){a.st=b.st="Conflicting";a.note="Conflicts with “"+b.text.slice(0,60)+"…” ("+SN(b.src)+"). Review and resolve.";b.note="Conflicts with “"+a.text.slice(0,60)+"…” ("+SN(a.src)+"). Review and resolve."}}))}
+let AI=null,MSG="",ANS="";
+if(window.claude&&claude.use)claude.use("sample").then(s=>{AI=s;draw()}).catch(()=>{});
+const log=m=>{S.log=((S.log||[]).concat(new Date().toLocaleTimeString()+" · "+m)).slice(-40)};
+const norm=t=>t.toLowerCase().replace(/\s+/g," ").trim();
+async function aiRun(){const L=[];S.sources.forEach(s=>s.text.split("\n").forEach((r,i)=>{if(r.trim())L.push({ref:s.id+":"+(i+1),s,raw:r.trim()})}));
+ MSG="AI is reading "+L.length+" lines…";draw();
+ try{const out=await AI.json("You extract handover knowledge from project notes. Input lines look like [ref] text. Return ONLY a JSON array. Each element: {\"ref\":\"<ref>\",\"type\":\"decision|task|question|ownership|risk|dependency|contact\",\"summary\":\"max 18 words\",\"owner\":\"person named in the text, else empty\",\"quote\":\"EXACT words copied from that line that prove it\",\"confidence\":0-1}. Never invent facts or owners. Skip lines with no handover value.\n\n"+L.map(x=>"["+x.ref+"] "+x.raw).join("\n"),{cache:false});
+  S.items=[];let drop=0;
+  (Array.isArray(out)?out:[]).forEach(o=>{const x=L.find(l=>l.ref==o.ref),q=norm(String(o.quote||""));
+   if(!x||!LBL[o.type]||q.length<4||!norm(x.raw).includes(q)){drop++;return}
+   const m=x.raw.match(/^([A-Z][a-z]+):\s/),sp=m&&!KW.test(m[1])?m[1]:"";let own=String(o.owner||"").trim();if(own&&own!=sp&&!x.raw.includes(own))own="";
+   S.items.push({id:S.nid++,type:o.type,text:String(o.summary||x.raw),raw:x.raw,src:x.s.id,ln:+o.ref.split(":")[1],by:sp||x.s.author,own,access:x.s.access,ok:null,ai:1,st:o.confidence<.6||o.type=="question"?"Needs confirmation":(o.type=="task"&&!own?"Missing evidence":"Verified")})});
+  conflicts();log("AI extracted "+S.items.length+" items; rejected "+drop+" with unverifiable quotes");MSG="AI kept "+S.items.length+" items. "+drop+" rejected because their quote was not found verbatim in the source.";S.tab="review"}
+ catch(e){MSG="AI failed ("+(e.code||"error")+"). Use the rule-based button instead."}
+ save();draw()}
+const cur=()=>{const v=S.versions[S.vi]||S.versions[S.versions.length-1],lv=LV[S.view];return{v,sh:v.items.filter(i=>LV[i.access]<=lv),R:lv<2?red:x=>x}};
+async function ask(q){if(!q.trim())return;const{sh,R}=cur();ANS="Thinking…";draw();
+ try{const r=await AI("Answer the question using ONLY these approved handover items. Cite items like [2]. If the answer is not in them, reply exactly: Not in the approved handover.\n\nItems:\n"+sh.map((i,k)=>"["+(k+1)+"] "+i.type+": "+R(i.text)+(i.own?" (owner "+i.own+")":"")+" ["+i.st+"]").join("\n")+"\n\nQuestion: "+q,{cache:false});
+  ANS=r.text+([...r.text.matchAll(/\[(\d+)\]/g)].some(m=>+m[1]<1||+m[1]>sh.length)?"\n⚠ This answer cites an item that does not exist. Do not trust it.":"");log("Asked: "+q)}
+ catch(e){ANS="AI unavailable ("+(e.code||"error")+")."}draw()}
+const cls=s=>s.split(" ")[0];
+function card(i){const e=S.edit==i.id;return `<div class="card t-${i.type} ${i.ok===true?"okc":i.ok===false?"no":""}"><div class="row"><span class="tag">${i.type}</span><span class="bd ${cls(i.st)}">${i.st}</span><span class="mut">${i.own?"Owner: "+esc(i.own):"No owner found"}</span><span class="mut">· ${i.access}</span>${i.ai?'<span class="mut">✨ AI · quote checked</span>':""}</div>`+
+ (e?`<p><input id="et" style="width:100%" value="${esc(i.text)}"></p><div class="row"><input id="eo" placeholder="Owner" value="${esc(i.own)}"><select id="es">${["Verified","Needs confirmation","Conflicting","Missing evidence"].map(x=>`<option ${x==i.st?"selected":""}>${x}</option>`).join("")}</select><button class="b p" data-a="save" data-id="${i.id}">Save</button><button class="b" data-a="cancel">Cancel</button></div>`:`<p>${esc(i.text)}</p>`)+
+ `<div class="cite">📎 ${esc(SN(i.src))} · line ${i.ln} · ${esc(i.by)}<q>${esc(i.raw)}</q></div>${i.note?`<div class="warn">${esc(i.note)}</div>`:""}`+
+ (e?"":`<div class="row" style="margin-top:8px"><button class="b" data-a="acc" data-id="${i.id}">${i.ok===true?"✓ Accepted":"Accept"}</button><button class="b" data-a="rej" data-id="${i.id}">${i.ok===false?"✗ Rejected":"Reject"}</button><button class="b" data-a="edit" data-id="${i.id}">Edit</button></div>`)+`</div>`}
+function connect(){return `<div class="steps"><div><b>1</b>Connect<span>Add sources or load the demo</span></div><div><b>2</b>Reconstruct<span>AI or rules extract decisions, tasks, owners, risks</span></div><div><b>3</b>Review<span>Every item shows its source line</span></div><div><b>4</b>Handover<span>Role-based view for the next person</span></div></div>
+<button class="b p" data-a="demo">▶ Load demo project</button> <button class="b" data-a="reset">Reset all</button>
+<h2>Add a source</h2><div class="g"><input id="st" placeholder="Title, e.g. Team chat"><input id="sa" placeholder="Author"><input id="sd" type="date"><select id="sx"><option>Team</option><option>Public</option><option>Restricted</option></select></div>
+<textarea id="stx" placeholder="Paste chat, meeting notes, commit log or task list. Tip: start chat lines with “Name: …”, or use “Decision:”, “Risk:”, “TODO:”."></textarea><p><button class="b" data-a="add">+ Add source</button></p>
+<h2>Sources (${S.sources.length})</h2>${S.sources.map(s=>`<div class="card"><div class="row"><b>${esc(s.title)}</b><span class="mut">${esc(s.author)} · ${esc(s.date)} · ${s.access} · ${s.text.split("\n").filter(Boolean).length} lines</span><button class="b" data-a="del" data-id="${s.id}">Remove</button></div></div>`).join("")||'<p class="mut">No sources yet.</p>'}
+${AI?`<button class="b p" data-a="ai" ${S.sources.length?"":"disabled"}>✨ Reconstruct with AI</button> `:""}<button class="b ${AI?"":"p"}" data-a="run" ${S.sources.length?"":"disabled"}>Reconstruct with rules →</button>`}
+function review(){if(!S.items.length)return `<p class="mut">Nothing extracted yet. Add sources in Connect and press Reconstruct.</p>`;
+ const ty=["all",...Object.keys(LBL)],list=S.items.filter(i=>S.flt=="all"||i.type==S.flt),n=S.items.filter(i=>i.ok===true).length,gaps=S.items.filter(i=>i.st!="Verified").length;
+ return `<div class="stats"><div><b>${S.items.length}</b>items found</div><div class="w"><b>${gaps}</b>need attention</div><div class="g2"><b>${n}</b>accepted</div></div>
+<div class="chips">${ty.map(t=>`<button class="b ${S.flt==t?"on":""}" data-a="flt" data-id="${t}">${t}</button>`).join("")}<button class="b" data-a="accv">Accept all Verified</button></div>${list.map(card).join("")}
+<div class="card"><div class="row"><input id="ap" placeholder="Approver name"><button class="b p" data-a="pub" ${n?"":"disabled"}>Approve &amp; publish handover v${S.versions.length+1} (${n} items)</button></div><div class="cite">Only accepted items are published. Published versions are locked; later changes create a new version.</div></div>`}
+const red=t=>t.replace(/[\w.+-]+@[\w-]+\.[\w.]+/g,"[redacted email]").replace(/\b\d{10}\b/g,"[redacted phone]");
+function handover(){if(!S.versions.length)return `<p class="mut">No approved handover yet. Accept items in Review and publish one.</p>`;
+ const v=S.versions[S.vi]||S.versions[S.versions.length-1],lv=LV[S.view],sh=v.items.filter(i=>LV[i.access]<=lv),hid=v.items.length-sh.length,R=lv<2?red:x=>x,li=i=>`<li>${esc(R(i.text))} <span class="mut">${i.own?"· "+esc(i.own):""}</span> <span class="bd ${cls(i.st)}">${i.st}</span><div class="cite">📎 ${esc(v.srcs[i.src]||"source")}, line ${i.ln}</div></li>`;
+ const own={};sh.filter(i=>i.own).forEach(i=>(own[i.own]=own[i.own]||[]).push(i));
+ const md=`# Handover v${v.n} (approved by ${v.by}, ${v.at})\n`+Object.keys(LBL).map(k=>{const a=sh.filter(i=>i.type==k);return a.length?`\n## ${LBL[k]}\n`+a.map(i=>`- ${R(i.text)}${i.own?" ["+i.own+"]":""} (${i.st}; ${v.srcs[i.src]}, line ${i.ln})`).join("\n"):""}).join("");
+ const op=sh.filter(i=>i.type=="task"||i.type=="risk"),cnt={};op.forEach(i=>{const k=i.own||"(no owner)";cnt[k]=(cnt[k]||0)+1});const top=Object.entries(cnt).filter(e=>e[0][0]!="(").sort((a,b)=>b[1]-a[1])[0];
+ const conc=top&&op.length>=3&&top[1]/op.length>=.4?`<div class="warn">⚠ <b>Knowledge concentration:</b> ${esc(top[0])} holds ${top[1]} of ${op.length} open tasks and risks${cnt["(no owner)"]?"; "+cnt["(no owner)"]+" have no owner":""}. Pair the incoming person with them first.</div>`:"";
+ const cites=[...new Set([...ANS.matchAll(/\[(\d+)\]/g)].map(m=>+m[1]))].filter(n=>sh[n-1]).map(n=>`<div class="cite">[${n}] ${esc(v.srcs[sh[n-1].src]||"source")}, line ${sh[n-1].ln}</div>`).join("");
+ return `<div class="row"><select data-a="ver">${S.versions.map((x,k)=>`<option value="${k}" ${x===v?"selected":""}>Version ${x.n}</option>`).join("")}</select><label>Viewing as <select data-a="view">${["Public","Team","Restricted"].map(x=>`<option ${x==S.view?"selected":""}>${x}</option>`).join("")}</select></label><span class="mut">Approved by ${esc(v.by)} · ${esc(v.at)}</span>${v.diff?`<span class="mut">· since v${v.diff.from}: +${v.diff.add} / −${v.diff.rem}</span>`:""}</div>${conc}
+ ${hid?`<div class="warn">🔒 ${hid} item(s) hidden: you are not authorised to see them. Emails and phone numbers are redacted below Restricted level.</div>`:""}
+ <h2>Your first-week checklist</h2><div class="card"><ul style="list-style:none;padding:0">${sh.filter(i=>i.type=="task"||i.type=="risk").map(i=>`<li><label><input type="checkbox"> ${i.type=="risk"?"Mitigate: ":"Finish: "}${esc(R(i.text))} <span class="mut">${i.own?"("+esc(i.own)+")":"(owner needed)"}</span></label></li>`).join("")||"Nothing pending."}</ul></div>
+ <h2>Ownership map</h2><div class="card">${Object.keys(own).map(p=>`<b>${esc(p)}</b><ul>${own[p].map(i=>`<li>${i.type}: ${esc(R(i.text))}</li>`).join("")}</ul>`).join("")||"No owners found."}</div>
+ ${Object.keys(LBL).filter(k=>k!="ownership").map(k=>{const a=sh.filter(i=>i.type==k);return a.length?`<h2>${LBL[k]}</h2><div class="card"><ul>${a.map(li).join("")}</ul></div>`:""}).join("")}
+ <h2>Gaps and uncertainty</h2><div class="card"><ul>${sh.filter(i=>i.st!="Verified").map(li).join("")||"<li>None flagged.</li>"}</ul></div>
+ <h2>Acknowledge receipt</h2><div class="card"><div class="row"><input id="an" placeholder="Your name"><button class="b p" data-a="ack">I have read this handover</button></div>${v.acks.map(a=>`<div class="cite">✓ ${esc(a)}</div>`).join("")}</div>
+ ${AI?`<h2>Ask the handover</h2><div class="card"><div class="row"><input id="aq" style="flex:1;min-width:200px" placeholder="e.g. What is risky and who owns it?"><button class="b p" data-a="ask">Ask</button></div>${ANS?`<p style="white-space:pre-wrap">${esc(ANS)}</p>`:""}${cites}<div class="cite">Uses only approved items you are authorised to see; citations are checked.</div></div>`:""}<h2>Audit log</h2><div class="card">${(S.log||[]).slice(-12).reverse().map(x=>`<div class="cite">${esc(x)}</div>`).join("")}</div><h2>Export (Markdown)</h2><button class="b" data-a="dl">⬇ Download .md</button> <textarea readonly>${esc(md)}</textarea>`}
+function draw(){$("#nav").innerHTML=[["connect","1 · Connect"],["review","2 · Review ("+S.items.length+")"],["handover","3 · Handover ("+S.versions.length+")"]].map(([k,l])=>`<button class="${S.tab==k?"on":""}" data-a="tab" data-id="${k}">${l}</button>`).join("");$("#app").innerHTML=(MSG?`<div class="warn" style="margin-bottom:10px">${esc(MSG)}</div>`:"")+({connect,review,handover})[S.tab]()}
+document.addEventListener("change",e=>{const a=e.target.dataset.a;if(!a)return;if(a=="view")S.view=e.target.value;if(a=="ver")S.vi=+e.target.value;save();draw()});
+document.addEventListener("click",e=>{const b=e.target.closest("button[data-a]");if(!b)return;const a=b.dataset.a,id=b.dataset.id,v=x=>($(x)||{}).value||"",it=S.items.find(i=>i.id==id);
+ const LG={demo:"Loaded demo project",add:"Added source",run:"Rule-based reconstruct",pub:"Published handover",ack:"Receipt acknowledged"};if(LG[a])log(LG[a]);
+ if(a=="ai")return aiRun();if(a=="ask")return ask(v("#aq"));if(a=="dl"){const u=URL.createObjectURL(new Blob([$("textarea[readonly]").value],{type:"text/markdown"})),l=document.createElement("a");l.href=u;l.download="handover.md";document.body.appendChild(l);l.click();l.remove();setTimeout(()=>URL.revokeObjectURL(u),1000);return}
+ if(a=="tab"){S.tab=id;MSG=""}else if(a=="demo"){S.sources=DEMO.map((d,k)=>({...d,id:S.nid+k}));S.nid+=DEMO.length;S.items=[];S.versions=[]}
+ else if(a=="reset"){S={sources:[],items:[],versions:[],nid:1,tab:"connect",edit:null,flt:"all",view:"Team",vi:0}}
+ else if(a=="add"){if(!v("#stx").trim())return;S.sources.push({id:S.nid++,title:v("#st")||"Untitled source",type:"Other",author:v("#sa")||"Unknown",date:v("#sd")||"n/a",access:v("#sx"),text:v("#stx")})}
+ else if(a=="del")S.sources=S.sources.filter(s=>s.id!=id);else if(a=="run")return analyse();
+ else if(a=="acc")it.ok=it.ok===true?null:true;else if(a=="rej")it.ok=it.ok===false?null:false;else if(a=="edit")S.edit=+id;else if(a=="cancel")S.edit=null;
+ else if(a=="save"){it.text=v("#et");it.own=v("#eo");it.st=v("#es");if(it.st!="Conflicting")it.note="";S.edit=null}
+ else if(a=="flt")S.flt=id;else if(a=="accv")S.items.forEach(i=>{if(i.st=="Verified")i.ok=true});
+ else if(a=="pub"){const ok=S.items.filter(i=>i.ok===true);const pv=S.versions[S.versions.length-1];S.versions.push({diff:pv?{from:pv.n,add:ok.filter(i=>!pv.items.some(q=>q.text==i.text)).length,rem:pv.items.filter(q=>!ok.some(i=>i.text==q.text)).length}:null,n:S.versions.length+1,by:v("#ap")||"Unnamed reviewer",at:new Date().toLocaleString(),items:JSON.parse(JSON.stringify(ok)),acks:[],srcs:Object.fromEntries(S.sources.map(s=>[s.id,s.title]))});S.vi=S.versions.length-1;S.tab="handover"}
+ else if(a=="ack"){const n=v("#an");if(!n)return;(S.versions[S.vi]||S.versions[S.versions.length-1]).acks.push(n+" · "+new Date().toLocaleString())}
+ save();draw()});
+draw();
+</script></body></html>
